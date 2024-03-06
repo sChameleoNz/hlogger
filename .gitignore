@@ -1,0 +1,21 @@
+# Virtual Environment
+.venv/
+
+# Cache
+**/__pycache__/
+
+# Log
+*.log
+
+# Build Output
+build/
+dist/
+**/*.egg-info/
+
+# Test Output
+.pytest_cache/
+.coverage
+coverage.*
+
+# MacOS
+**/.DS_Store
