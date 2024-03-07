@@ -49,3 +49,13 @@ def get_logger(name: str) -> Optional[logging.Logger]:
     for l in loggers:
         if l.name == name:
             return l
+
+
+def set_formatter(name: str, formatter: logging.Formatter) -> None:
+    """Set the formatter for all handlers of the logger with the specified name.
+
+    Args:
+        name (str): Name of the logger
+        formatter (logging.Formatter): Formatter to use
+    """
+    HLogger.set_formatter(name, formatter)

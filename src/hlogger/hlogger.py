@@ -61,6 +61,19 @@ class HLogger:
             logger.setLevel(level)
 
     @classmethod
+    def set_formatter(cls, name: str, formatter: logging.Formatter) -> None:
+        """Set the formatter for all handlers of the logger.
+
+        Args:
+            name (str): Name of the logger
+            formatter (logging.Formatter): Formatter to use
+        """
+        with cls._lock:
+            logger = logging.getLogger(name)
+            for handler in logger.handlers:
+                handler.setFormatter(formatter)
+
+    @classmethod
     def change_log_file(
         cls,
         name: str,
