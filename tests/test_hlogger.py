@@ -33,12 +33,29 @@ def test_set_level(cleanup):
     logger_name = "test_logger"
     logger = HLogger.get_logger(logger_name, TEST_LOG_FILE)
 
-    # Set the log level to INFO
-    HLogger.set_level(logger_name, logging.INFO)
+    # Custom level
+    custom_level = logging.INFO
 
-    assert logger.level == logging.INFO
+    # Set the log level to INFO
+    HLogger.set_level(logger_name, custom_level)
+
+    assert logger.level == custom_level
     for handler in logger.handlers:
-        assert handler.level == logging.INFO
+        assert handler.level == custom_level
+
+
+def test_set_formatter(cleanup):
+    logger_name = "test_logger"
+    logger = HLogger.get_logger(logger_name, TEST_LOG_FILE)
+
+    # Custom formatter
+    custom_formatter = logging.Formatter("%(message)s")
+
+    # Set custom formatter
+    HLogger.set_formatter(logger_name, custom_formatter)
+
+    # Verify that all handlers have the custom formatter
+    assert all(handler.formatter == custom_formatter for handler in logger.handlers)
 
 
 def test_change_log_file(cleanup):
