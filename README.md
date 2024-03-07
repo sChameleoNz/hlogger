@@ -1,5 +1,9 @@
 # HLogger
 
+![PyPI - Version](https://img.shields.io/pypi/v/hlogger)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/sChameleoNz/hlogger/test.yml)
+![Codecov](https://img.shields.io/codecov/c/github/sChameleoNz/hlogger)
+
 HLogger is a utility module that provides a flexible logging solution for Python applications.
 It allows you to easily create and manage loggers with both file and stream handlers.
 
