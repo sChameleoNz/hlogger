@@ -35,9 +35,6 @@ class HLogger:
             logger = logging.getLogger(name)
             logger.setLevel(level)
 
-            for h in logger.handlers:
-                print(h)
-
             # File Handler
             cls._add_file_handler(logger, file_name, max_file_size, backup_count, level)
 
